@@ -67,7 +67,7 @@ def add_parser_params(parser):
     parser.add_argument('--sampler', default='iid', type=str, choices=['iid', 'dirichlet', 'quantity_skew'],
                         help='Whether noniid.')
 
-    parser.add_argument('--dirichlet', default=0.5, type=int,
+    parser.add_argument('--dirichlet', default=0.5, type=float,
                         help='The parameter for the dirichlet distribution for data partitioning, when noniid type is dirichlet')
 
     # federated learning
@@ -76,7 +76,7 @@ def add_parser_params(parser):
     parser.add_argument('--frac', default=1.0, type=float, help='The fraction of clients in a round.')
 
     # for FedProx
-    parser.add_argument('--prox_mu', default=0.01, type=int,
+    parser.add_argument('--prox_mu', default=0.01, type=float,
                         help='The hypter parameter for the FedProx (default: 0.01).')
 
     parser.add_argument('--local_epoch', default=1, type=int, help='Local epoch of each client.')
